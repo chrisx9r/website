@@ -71,16 +71,20 @@ header {
 }
 
 .hero {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    height: 40vh; /* Full viewport height */
 }
 
+
+
 .hero-content {
-    padding-right: 2rem;
+   text-align: center;
 }
 
 .hero h1 {
@@ -103,17 +107,13 @@ header {
     margin-bottom: 2rem;
 }
 
-.hero-image img {
-    width: 50%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
 /* Buttons */
 .cta-buttons {
     display: flex;
-    gap: 1rem;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Ensures alignment */
+    gap: 1rem; /* Spacing between buttons */
+     /* Space between text and buttons */
 }
 
 .primary-btn, .secondary-btn {
@@ -143,12 +143,13 @@ header {
 
 /* Main content */
 main {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
 }
 
 section {
+    width: 100%;
     margin-bottom: 6rem;
     padding: 2rem 0;
 }
@@ -156,8 +157,20 @@ section {
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
 }
-
+.section-header::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 2rem auto; /* Centers the divider */
+    border-radius: 2px;
+}
 .section-title {
     color: var(--primary);
     font-size: 1.1rem;
@@ -171,6 +184,15 @@ section {
     color: var(--dark);
     margin-top: 0.5rem;
 }
+
+section:nth-child(even) {
+    background-color: #f8f9fa;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 2rem calc(50vw - 50% + 2rem);
+    box-sizing: border-box;
+}
+
 
 /* About section */
 .about-content {
@@ -343,9 +365,9 @@ section {
 
 /* Contact section */
 .contact-content {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    padding: 0 2rem;
 }
 
 .contact-info {
