@@ -50,12 +50,12 @@
 
     <main>
         <section id="about">
-            <div class="section-header">
+            <div class="section-header fade-in-element">
                 <span class="section-title">Hi there! 👋</span>
                
                 <h2>Let me introduce myself</h2>
             </div>
-            <div class="about-content">
+            <div class="about-content fade-in-element">
                 <p>I'm a Computer Science student at Queen's University, passionate about building 
                     software solutions and exploring new technologies. I enjoy working on web development, 
                     backend systems, and AI-driven applications. Always excited to learn and collaborate on new projects!</p>
@@ -64,11 +64,11 @@
         </section>
 
         <section id="skills">
-            <div class="section-header">
+            <div class="section-header fade-in-element">
                 <span class="section-title">My Skills</span>
                 <h2>What I Bring to The Table</h2>
             </div>
-            <div class="skills-grid">
+            <div class="skills-grid fade-in-element">
                 <div class="skill-card">
                     <i class="fas fa-code"></i>
                     <h3>Frontend Development</h3>
@@ -107,11 +107,11 @@
         </section>
 
         <section id="portfolio">
-            <div class="section-header">
+            <div class="section-header fade-in-element">
                 <span class="section-title">Portfolio</span>
                 <h1> Some of my Recent projects </h1>
             </div>
-            <div class="portfolio-grid">
+            <div class="portfolio-grid fade-in-element">
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <h2> 📍 </h2>
@@ -169,13 +169,13 @@
         </section>
 
         <section id="contact">
-            <div class="section-header">
+            <div class="section-header fade-in-element">
                 <span class="section-title">Contact</span>
                 <h2>Get In Touch</h2>
             </div>
             
             
-            <div class="contact-content">
+            <div class="contact-content fade-in-element">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -192,7 +192,47 @@
                     </div>
                 </div>
             </div>
+       
+            
+       
+       
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                const sections = document.querySelectorAll('section');
+                const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                // If the section is visible
+                if (entry.isIntersecting) {
+                // Add the active class to trigger animations
+                    entry.target.classList.add('active');
+            // Once it's animated, we can stop observing it
+                    observer.unobserve(entry.target);
+                }
+                });
+            }, {
+        // Trigger when at least 10% of the element is visible
+                threshold: 0.1
+            });
+      
+      // Start observing each section
+            sections.forEach(section => {
+             observer.observe(section);
+             });
+            });
+            
+            
+            
+            
+
+
+
+
+
+            
+        </script>
+        
+    
     </main>
 
     <footer>
