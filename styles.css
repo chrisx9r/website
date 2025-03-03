@@ -295,11 +295,13 @@ section:nth-child(even) {
     overflow: hidden;
 }
 
-.portfolio-image img {
-    width: 50%;
-    height: 120px;
-    object-fit: cover;
-    transition: transform 0.5s;
+.portfolio-image h2 {
+    font-size: 1.5rem; /* Adjust as needed */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10px; /* Match the height of images */
 }
 
 .portfolio-item:hover .portfolio-image img {
