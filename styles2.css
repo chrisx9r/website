@@ -270,6 +270,17 @@ section:nth-child(even) {
     font-weight: 500;
 }
 
+.skills-diagram {
+
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center-align horizontally */
+    justify-content: center; /* Center-align vertically */
+    text-align: center;
+    gap: 10px; 
+    margin-bottom: 15px;
+}
+
 /* Portfolio section */
 .portfolio-grid {
     display: grid;
