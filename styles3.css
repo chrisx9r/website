@@ -1086,6 +1086,10 @@ footer {
 
 /* Responsive design */
 @media (max-width: 1024px) {
+    
+    .scroll-indicator {
+        display: none;
+    }
     .hero h1 {
         font-size: 3.5rem;
     }
